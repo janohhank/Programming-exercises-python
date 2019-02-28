@@ -42,8 +42,8 @@ import os
 # Import argparse package for easier command line argument parsing.
 import argparse
 
-parser = argparse.ArgumentParser(description='004-RectangleArea.')
-parser.add_argument('--inputFilePath',required=True,type=str,help='Pre-generated input file path which contains the 2D coordinates.')
+parser = argparse.ArgumentParser(description="004-RectangleArea.")
+parser.add_argument("--inputFilePath",required=True,type=str,help="Pre-generated input file path which contains the 2D coordinates.")
 
 args = parser.parse_args()
 inputFilePath = args.inputFilePath

@@ -34,10 +34,10 @@ import argparse
 # Import matplotlib package for mathematical plotting.
 import matplotlib.pyplot
 
-parser = argparse.ArgumentParser(description='001-QuadraticEquation exercise.')
-parser.add_argument('--a',required=True,type=int,help='The ax^2+bx+c=0 equation \'a\' coefficent, it can\'t be zero!')
-parser.add_argument('--b',required=True,type=int,help='The ax^2+bx+c=0 equation \'b\' coefficent.')
-parser.add_argument('--c',required=True,type=int,help='The ax^2+bx+c=0 equation \'c\' coefficent.')
+parser = argparse.ArgumentParser(description="001-QuadraticEquation exercise.")
+parser.add_argument("--a",required=True,type=int,help="The ax^2+bx+c=0 equation \'a\' coefficent, it can\'t be zero!")
+parser.add_argument("--b",required=True,type=int,help="The ax^2+bx+c=0 equation \'b\' coefficent.")
+parser.add_argument("--c",required=True,type=int,help="The ax^2+bx+c=0 equation \'c\' coefficent.")
 
 args = parser.parse_args()
 a = args.a

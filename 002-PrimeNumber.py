@@ -49,8 +49,8 @@ def isItPrimeShortCut(selectedNumber):
 			return False
 	return True
 
-parser = argparse.ArgumentParser(description='002-PrimeNumber exercise.')
-parser.add_argument('--selectedNumber',required=True,type=int,help='The selected natural number.')
+parser = argparse.ArgumentParser(description="002-PrimeNumber exercise.")
+parser.add_argument("--selectedNumber",required=True,type=int,help="The selected natural number.")
 
 args = parser.parse_args()
 selectedNumber = args.selectedNumber

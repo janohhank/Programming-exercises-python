@@ -52,8 +52,8 @@ def fibonacciClosedForm(nthElement):
 	result = (1.0 / math.sqrt(5.0)) * (a - b)
 	return result
 
-parser = argparse.ArgumentParser(description='002-FibonacciSequence exercise.')
-parser.add_argument('--selectedNumber',required=True,type=int,help='The selected n\'th element, natural number.')
+parser = argparse.ArgumentParser(description="002-FibonacciSequence exercise.")
+parser.add_argument("--selectedNumber",required=True,type=int,help="The selected n\'th element, natural number.")
 
 args = parser.parse_args()
 selectedNumber = args.selectedNumber
