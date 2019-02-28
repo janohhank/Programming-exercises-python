@@ -9,7 +9,7 @@
 ##	* When you use 3rd party code from stackoverflow or other source, always reference this in the code in a comment.
 ##	  Even if you modified the code.
 ##
-## Task: 001-PrimeNumber:
+## Task: 002-PrimeNumber:
 ## Create a mini program, which tells you if a number is prime number.
 ##
 ## The program's input is the choosen number.
@@ -40,7 +40,7 @@ startTime = time.time()
 # Warning range() or xrange() can be dangeorus in these situations.
 # The selected number can be very large and the xrange() possibly throws a MemoryError.
 dividers = 0
-for i in xrange(1, selectedNumber + 1):
+for i in range(1, selectedNumber + 1):
 	if(selectedNumber % i == 0):
 		dividers += 1
 
