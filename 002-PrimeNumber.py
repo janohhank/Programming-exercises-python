@@ -17,12 +17,37 @@
 ##
 ## Extra task: Extend the program with a time measure (for example python time package). Measure the running times with different inputs.
 ##
-## @author Kishazi "janohhank" Janos
+## @task-author Kishazi "janohhank" Janos
+## @implementation-author Kishazi "janohhank" Janos
 
 # Import argparse package for easier command line argument parsing.
 import argparse
 # Import time package for time measure
 import time
+
+# Brute force solution of the prime problem.
+def isItPrimeBruteForce(selectedNumber):
+	# WARNING range() or xrange() can be dangeorus in these situations.
+	# The selected number can be very large and the range() or xrange() can be thrown a MemoryError.
+	dividers = 0
+	for i in range(1, selectedNumber + 1):
+		if(selectedNumber % i == 0):
+			dividers += 1
+
+	if(dividers == 2):
+		return True
+	else:
+		return False
+
+# Better solution for prime decision, if we got one divider except 1 and itself it returns.
+# NOTE: range(a,b) defines this interval: [a,b[
+def isItPrimeShortCut(selectedNumber):
+	# WARNING range() or xrange() can be dangeorus in these situations.
+	# The selected number can be very large and the range() or xrange() can be thrown a MemoryError.
+	for i in range(2, selectedNumber):
+		if(selectedNumber % i == 0):
+			return False
+	return True
 
 parser = argparse.ArgumentParser(description='002-PrimeNumber exercise.')
 parser.add_argument('--selectedNumber',required=True,type=int,help='The selected natural number.')
@@ -36,22 +61,20 @@ if(selectedNumber < 1):
 print("[" + __file__ + "]" + "[INFO]" + " The selected number is: " + str(selectedNumber))
 
 startTime = time.time()
-
-# Warning range() or xrange() can be dangeorus in these situations.
-# The selected number can be very large and the xrange() possibly throws a MemoryError.
-dividers = 0
-for i in range(1, selectedNumber + 1):
-	if(selectedNumber % i == 0):
-		dividers += 1
-
+isItPrimeResult_1 = isItPrimeBruteForce(selectedNumber)
 endTime = time.time()
 elapsedTime = endTime - startTime
 
-print("[" + __file__ + "]" + "[INFO]" + " The selected number has " + str(dividers) + " dividers.")
+print("[" + __file__ + "]" + "[INFO]" + " The brute force solution takes " + str(elapsedTime * 1000) + " milliseconds.")
 
-if(dividers == 2):
-	print("[" + __file__ + "]" + "[INFO]" + " The selected number is a prime!")
+startTime = time.time()
+isItPrimeResult_2 = isItPrimeShortCut(selectedNumber)
+endTime = time.time()
+elapsedTime = endTime - startTime
+
+print("[" + __file__ + "]" + "[INFO]" + " The short cut version takes " + str(elapsedTime * 1000) + " milliseconds.")
+
+if(isItPrimeResult_1 and isItPrimeResult_2):
+	print("[" + __file__ + "]" + "[INFO]" + " " + str(selectedNumber) + " is a prime!")
 else:
-	print("[" + __file__ + "]" + "[INFO]" + " The selected number is not a prime!")
-
-print("[" + __file__ + "]" + "[INFO]" + " The program counting takes " + str(elapsedTime * 1000) + " milliseconds.")
+	print("[" + __file__ + "]" + "[INFO]" + " " + str(selectedNumber) + " is not a prime!")

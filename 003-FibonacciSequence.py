@@ -18,7 +18,8 @@
 ## Extra task-1: Create the Fibonacci calculation method with recursive and iterative logic too.
 ## Extra task-2: Change the program to calculate exactly just the n'th element of the sequence (closed-form of the expression).
 ##
-## @author Kishazi "janohhank" Janos
+## @task-author Kishazi "janohhank" Janos
+## @implementation-author Kishazi "janohhank" Janos
 
 # Import argparse package for easier command line argument parsing.
 import argparse

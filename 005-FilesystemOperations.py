@@ -23,4 +23,5 @@
 ## You have to check that the input parameters are correct, before the program tries to do a file operation.
 ## For example: the selected directory exists or not?
 ##
-## @author Kishazi "janohhank" Janos
+## @task-author Kishazi "janohhank" Janos
+## @implementation-author Kishazi "janohhank" Janos

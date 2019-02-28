@@ -34,9 +34,10 @@
 ##
 ## The program input requirements is the path of the pre-generated file.
 ##
-## @author Kishazi "janohhank" Janos
+## @task-author Kishazi "janohhank" Janos
+## @implementation-author Kishazi "janohhank" Janos
 
-# TODO
+# This module provides a portable way of using operating system dependent functionality.
 import os
 # Import argparse package for easier command line argument parsing.
 import argparse
@@ -59,6 +60,7 @@ with open(inputFilePath) as inputFile:
 	for line in lines:
 		splitLine = str(line).split(',')
 		if(len(splitLine) != 8):
+			# This line doesn't contains 8 comma separated coordinates
 			continue
 		# lrx - ulx
 		currentWidth = float(splitLine[4]) - float(splitLine[0])
@@ -74,8 +76,8 @@ with open(inputFilePath) as inputFile:
 
 resultSize = len(areas)
 if resultSize == 0:
-	print("[" + __file__ + "]" + "[ERROR]" + " There are no calculable rectangles in the pre-generated file!")
+	print("[" + __file__ + "]" + "[WARNING]" + " There are no calculable rectangles in the pre-generated file!")
 elif resultSize < 3:
-	print("[" + __file__ + "]" + "[ERROR]" + " There are less then three calculable rectangles in the pre-generated file!")
+	print("[" + __file__ + "]" + "[WARNING]" + " There are less then three calculable rectangles in the pre-generated file!")
 else:
 	print("[" + __file__ + "]" + "[INFO]" + " The largest three rectangles areas are: " + str(areas))

@@ -20,4 +20,5 @@
 ## Player movement: up,up,left,right,up,left...
 ## Reverse movement: right,down,left,right,down,down...
 ##
-## @author Kishazi "janohhank" Janos
+## @task-author Kishazi "janohhank" Janos
+## @implementation-author Kishazi "janohhank" Janos

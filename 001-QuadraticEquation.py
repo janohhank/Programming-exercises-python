@@ -22,7 +22,8 @@
 ## Not complex test input: 6x^2 + 11x - 35 = 0
 ## Complex test input: 1x^2 + 2x + 3 = 0
 ##
-## @author Kishazi "janohhank" Janos
+## @task-author Kishazi "janohhank" Janos
+## @implementation-author Kishazi "janohhank" Janos
 
 # Import math package for mathematical operations (cmath is for complex numbers).
 import cmath
