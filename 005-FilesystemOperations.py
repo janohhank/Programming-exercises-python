@@ -14,10 +14,10 @@
 ##
 ## The required operations:
 ##	* List files from a specific folder.
-##	* Copy one file from a path to another target path.
-##	* Move one file from a specific folder to another target path.
+##	* Copy one file from a path to another target path (the file name remains the same).
+##	* Move one file from a specific folder to another target path (the file name can be changed).
 ##
-## The program main input parameter is the usage mode (files listing, copy file, move file).
+## The program main input parameter is the usage mode (files listing (ls), copy file (cp), move file (mv)).
 ## After that the user can be type the other inputs into the program, based on the selected mode requirements.
 ##
 ## You have to check that the input parameters are correct, before the program tries to do a file operation.
