@@ -9,7 +9,7 @@
 ##	* When you use 3rd party code from stackoverflow or other source, always reference this in the code in a comment.
 ##	  Even if you modified the code.
 ##
-## Task: 008-Strings:
+## Task: 009-Strings:
 ## This exercise is based on the string operations in Python.
 ## Solve every task of the exercise and print the resut to the standard output.
 ##
