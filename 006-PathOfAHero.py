@@ -43,29 +43,31 @@ window.keypad(True)
 # Get current window dimension.
 windowDimensions = window.getmaxyx()
 
+window.addstr("Welcome hero, you need to add your path (10 movement) to generate the reverse path.")
+
 step = 0
 movements = []
 while(step < 10):
 	key = window.getch()
 	if(key == curses.KEY_DOWN):
 		window.clear()
-		window.addstr(windowDimensions[0] / 2, windowDimensions[1] / 2, "KEY_DOWN")
+		window.addstr(int(windowDimensions[0] / 2), int(windowDimensions[1] / 2), "KEY_DOWN")
 		movements.append("DOWN")
 	elif(key == curses.KEY_UP):
 		window.clear()
-		window.addstr(windowDimensions[0] / 2, windowDimensions[1] / 2, "KEY_UP")
+		window.addstr(int(windowDimensions[0] / 2), int(windowDimensions[1] / 2), "KEY_UP")
 		movements.append("UP")
 	elif(key == curses.KEY_LEFT):
 		window.clear()
-		window.addstr(windowDimensions[0] / 2, windowDimensions[1] / 2, "KEY_LEFT")
+		window.addstr(int(windowDimensions[0] / 2), int(windowDimensions[1] / 2), "KEY_LEFT")
 		movements.append("LEFT")
 	elif(key == curses.KEY_RIGHT):
 		window.clear()
-		window.addstr(windowDimensions[0] / 2, windowDimensions[1] / 2, "KEY_RIGHT")
+		window.addstr(int(windowDimensions[0] / 2), int(windowDimensions[1] / 2), "KEY_RIGHT")
 		movements.append("RIGHT")
 	else:
 		window.clear()
-		window.addstr(windowDimensions[0] / 2, windowDimensions[1] / 2, "Invalid key, you should use arrows.")
+		window.addstr(int(windowDimensions[0] / 2), int(windowDimensions[1] / 2), "Invalid key, you should use arrows.")
 		continue
 	step += 1
 
