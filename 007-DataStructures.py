@@ -14,7 +14,7 @@
 ## and also get the a general programming knowladge about this topic.
 ##
 ## @task-author Kishazi "janohhank" Janos
-## @implementation-author Kisházi "janohhank" János
+## @implementation-author Kishazi "janohhank" Janos
 
 ## A. List
 ## Python data structures documentation: https://docs.python.org/2/tutorial/datastructures.html#more-on-lists

@@ -14,7 +14,7 @@
 ## Solve every task of the exercise and print the resut to the standard output.
 ##
 ## @task-author Kishazi "janohhank" Janos
-## @implementation-author
+## @implementation-author Kishazi "janohhank" Janos
 
 message="Hello, this is a Python program."
 

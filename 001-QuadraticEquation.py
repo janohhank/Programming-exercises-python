@@ -1,4 +1,4 @@
-#!/usr/bin/python
+##!/usr/bin/python
 
 ## General info:
 ##	* The created program have to communicate in english with the user.
@@ -55,7 +55,7 @@ x2 = (-b - cmath.sqrt(discriminant)) / (2 * a)
 
 print("[" + __file__ + "]" + "[INFO]" + " Calculated results, x1 : " + str(x1) + " x2: " + str(x2))
 
-if(x1.imag == 0.0) and (x2.imag == 0.0):
+if((x1.imag == 0.0) and (x2.imag == 0.0)):
 	print("[" + __file__ + "]" + "[INFO]" + " Plotting the quadratic equation.")
 
 	xRangeMin = min(x1.real,x2.real) - 10

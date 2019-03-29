@@ -35,20 +35,20 @@ import argparse
 
 # Lists all files in a given directory.
 def listFiles(inputDirPath):
-	if os.path.isdir(inputDirPath) is False:
+	if(os.path.isdir(inputDirPath) is False):
 		raise Exception("The input path does not denote a directory: " + inputDirPath)
 
 	print("[" + __file__ + "]" + "[INFO]" + " The " + inputDirPath + " contains these files:")
 	for item in os.listdir(inputDirPath):
-		if os.path.isfile(os.path.join(inputDirPath, item)):
+		if(os.path.isfile(os.path.join(inputDirPath, item))):
 			print(item)
 
 # Copies file from an input path to the target path the file name is the same as the original file name.
 def copyFile(inputFilePath, targetDirectory):
-	if os.path.isfile(inputFilePath) is False:
+	if(os.path.isfile(inputFilePath) is False):
 		raise Exception("The input path does not denote a file: " + inputFilePath)
 
-	if os.path.isdir(targetDirectory) is False:
+	if(os.path.isdir(targetDirectory) is False):
 		raise Exception("The target path does not denote a directory: " + targetDirectory)
 
 	targetFileName = os.path.basename(inputFilePath)
@@ -63,10 +63,10 @@ def copyFile(inputFilePath, targetDirectory):
 
 # Moves file from an input path to the target path and ranames the file if necessary.
 def moveFile(inputFilePath, targetFilePath):
-	if os.path.isfile(inputFilePath) is False:
+	if(os.path.isfile(inputFilePath) is False):
 		raise Exception("The input path does not denote a file: " + inputFilePath)
 
-	if os.path.isfile(targetFilePath) is True:
+	if(os.path.isfile(targetFilePath) is True):
 		raise Exception("In the target directory the file already exists: " + targetFilePath)
 
 	try:

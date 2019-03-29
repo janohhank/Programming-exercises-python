@@ -27,7 +27,7 @@ import argparse
 import math
 
 def fibonacciRecursive(nthElement):
-	if(nthElement == 0) or (nthElement == 1):
+	if((nthElement == 0) or (nthElement == 1)):
 		return nthElement
 	else:
 		return fibonacciRecursive(nthElement - 1) + fibonacciRecursive(nthElement - 2)

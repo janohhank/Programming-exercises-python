@@ -23,6 +23,7 @@
 ## @task-author Kishazi "janohhank" Janos
 ## @implementation-author Kishazi "janohhank" Janos
 
+# The curses library supplies a terminal-independent screen-painting and keyboard-handling facility for text-based terminals.
 import curses
 
 print(

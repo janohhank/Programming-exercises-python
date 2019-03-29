@@ -48,7 +48,7 @@ parser.add_argument("--inputFilePath",required=True,type=str,help="Pre-generated
 args = parser.parse_args()
 inputFilePath = args.inputFilePath
 
-if os.path.isfile(inputFilePath) is False:
+if(os.path.isfile(inputFilePath) is False):
 	raise Exception("The input parameter does not denote a file: " + inputFilePath)
 
 print("[" + __file__ + "]" + "[INFO]" + " Selected pre-generated input file path: " + inputFilePath)
@@ -70,14 +70,14 @@ with open(inputFilePath) as inputFile:
 		area = currentWidth * currentHeight
 
 		areas.append(area)
-		if len(areas) > 3:
+		if(len(areas) > 3):
 			list.sort(areas, reverse=True)
 			del areas[-1]
 
 resultSize = len(areas)
-if resultSize == 0:
+if(resultSize == 0):
 	print("[" + __file__ + "]" + "[WARNING]" + " There are no calculable rectangles in the pre-generated file!")
-elif resultSize < 3:
+elif(resultSize < 3):
 	print("[" + __file__ + "]" + "[WARNING]" + " There are less then three calculable rectangles in the pre-generated file!")
 else:
 	print("[" + __file__ + "]" + "[INFO]" + " The largest three rectangles areas are: " + str(areas))
