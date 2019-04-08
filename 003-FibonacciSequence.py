@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 ## General info:
 ##	* The created program have to communicate in english with the user.
