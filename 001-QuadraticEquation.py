@@ -10,7 +10,7 @@
 ##	  Even if you modified the code.
 ##
 ## Task: 001-QuadraticEquation:
-## Create a mini program, which can calculates a predefined quadratic equation.
+## Create a mini program, which can calculate a predefined quadratic equation.
 ##
 ## The program's inputs are the ax^2 + bx + c = 0 equation [a,b,c] coefficents.
 ##
