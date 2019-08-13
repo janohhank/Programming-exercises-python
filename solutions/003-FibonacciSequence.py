@@ -26,12 +26,18 @@ import argparse
 # Import math package for mathematical functions.
 import math
 
+'''
+'' Gives the nth fibonacci numbers in a recursive way.
+'''
 def fibonacciRecursive(nthElement):
 	if((nthElement == 0) or (nthElement == 1)):
 		return nthElement
 	else:
 		return fibonacciRecursive(nthElement - 1) + fibonacciRecursive(nthElement - 2)
 
+'''
+'' Gives the nth fibonaccy number in an iterative way.
+'''
 def fibonacciIterative(nthElement):
 	result = 0
 	previousElement = 1
@@ -46,6 +52,9 @@ def fibonacciIterative(nthElement):
 	print()
 	return result
 
+'''
+'' Gives the nth fibonacci number from a the closed form.
+'''
 def fibonacciClosedForm(nthElement):
 	a = pow((1.0 + math.sqrt(5.0)) / 2.0, nthElement)
 	b = pow((1.0 - math.sqrt(5.0)) / 2.0, nthElement)

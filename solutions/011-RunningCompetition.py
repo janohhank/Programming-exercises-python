@@ -32,7 +32,9 @@ import argparse
 # The operator module exports a set of efficient functions corresponding to the intrinsic operators of Python.
 import operator
 
-# Gives the laptimes associated to the player IDs in a dictionary
+'''
+'' Gives the laptimes associated to the player IDs in a dictionary.
+'''
 def getLaptimesForPlayers(inputFilePathLaptime):
 	try:
 		inputFileLaptime = open(inputFilePathLaptime, "r")
@@ -55,7 +57,9 @@ def getLaptimesForPlayers(inputFilePathLaptime):
 
 	return laptimesMap
 
-# Gives the player names associated to the player IDs in a dictionary
+'''
+'' Gives the player names associated to the player IDs in a dictionary.
+'''
 def getPlayerNamesForIDs(inputFilePathNameID):
 	try:
 		inputFileNameID = open(inputFilePathNameID, "r")
@@ -76,7 +80,9 @@ def getPlayerNamesForIDs(inputFilePathNameID):
 
 	return playerNamesMap
 
-# Gives the player race times associated to the player IDs in a dictionary
+'''
+'' Gives the player race times associated to the player IDs in a dictionary.
+'''
 def getPlayersRaceTime(laptimesMap):
 	playerRaceTimesMap = {}
 	for playerID, laptimes in laptimesMap.items():
@@ -86,8 +92,10 @@ def getPlayersRaceTime(laptimesMap):
 		playerRaceTimesMap[playerID] = sumLaptime
 	return playerRaceTimesMap
 
-# Gives best lap time(s) (if the results has equal times) in a dictionary.
-# Player ID associated to the best laptime.
+'''
+'' Gives best lap time(s) (if the results has equal times) in a dictionary.
+'' Player ID associated to the best laptime.
+'''
 def getBestLaptime(laptimesMap):
 	bestLaptimes = {}
 	minLaptime = float('inf')
@@ -118,7 +126,7 @@ if(os.path.isfile(inputFilePathLaptime) is False):
 # Get laptimes associated to player IDs (a dictionary, key=playerID, value=laptimes list)
 laptimesMap = getLaptimesForPlayers(inputFilePathLaptime)
 
-# Get player names associated to player names (a dictionary, key=playerID, value=playerName)
+# Get player names associated to player IDs (a dictionary, key=playerID, value=playerName)
 playerNamesMap = getPlayerNamesForIDs(inputFilePathNameID)
 
 # Get player race time associated to player IDs (a dictionary, key=playerID, value=racetime)

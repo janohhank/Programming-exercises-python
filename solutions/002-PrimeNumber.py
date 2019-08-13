@@ -25,7 +25,9 @@ import argparse
 # Import time package for time measure
 import time
 
-# Brute force solution of the prime problem.
+'''
+'' Brute force solution of the prime problem.
+'''
 def isItPrimeBruteForce(selectedNumber):
 	# WARNING range() or xrange() can be dangeorus in these situations.
 	# The selected number can be very large and the range() or xrange() can be thrown a MemoryError.
@@ -39,8 +41,10 @@ def isItPrimeBruteForce(selectedNumber):
 	else:
 		return False
 
-# Better solution for prime decision, if we got one divider except 1 and itself it returns.
-# NOTE: range(a,b) defines this interval: [a,b[
+'''
+'' Better solution for prime decision, if we got one divider except 1 and itself it returns.
+'' NOTE: range(a,b) defines this interval: [a,b[
+'''
 def isItPrimeShortCut(selectedNumber):
 	# WARNING range() or xrange() can be dangeorus in these situations.
 	# The selected number can be very large and the range() or xrange() can be thrown a MemoryError.

@@ -33,7 +33,9 @@ import shutil
 # Import argparse package for easier command line argument parsing.
 import argparse
 
-# Lists all files in a given directory.
+'''
+'' Lists all files in a given directory.
+'''
 def listFiles(inputDirPath):
 	if(os.path.isdir(inputDirPath) is False):
 		raise Exception("The input path does not denote a directory: " + inputDirPath)
@@ -43,7 +45,9 @@ def listFiles(inputDirPath):
 		if(os.path.isfile(os.path.join(inputDirPath, item))):
 			print(item)
 
-# Copies file from an input path to the target path the file name is the same as the original file name.
+'''
+'' Copies file from an input path to the target path the file name is the same as the original file name.
+'''
 def copyFile(inputFilePath, targetDirectory):
 	if(os.path.isfile(inputFilePath) is False):
 		raise Exception("The input path does not denote a file: " + inputFilePath)
@@ -61,7 +65,9 @@ def copyFile(inputFilePath, targetDirectory):
 		print("[" + __file__ + "]" + "[ERROR]" + " Error caught in copyFile: " + ioError)
 		sys.exit
 
-# Moves file from an input path to the target path and ranames the file if necessary.
+'''
+'' Moves file from an input path to the target path and ranames the file if necessary.
+'''
 def moveFile(inputFilePath, targetFilePath):
 	if(os.path.isfile(inputFilePath) is False):
 		raise Exception("The input path does not denote a file: " + inputFilePath)

@@ -22,9 +22,11 @@ import os
 # Import math package for mathematical functions.
 import math
 
-# 1. task
-# Create a function which has one parameter: a text file path.
-# This function prints the file content into the standard output.
+'''
+'' 1. task
+'' Create a function which has one parameter: a text file path.
+'' This function prints the file content into the standard output.
+'''
 def readTextFile(filePath):
 	if(os.path.isfile(filePath) is False):
 		raise Exception("The input path does not denote a directory: " + filePath)
@@ -39,10 +41,12 @@ def readTextFile(filePath):
 
 	print(textFile.read())
 
-# 2. task
-# Create a function which has one parameter: a text file path.
-# This function counts the words and sentences in the text file
-# and returns these values.
+'''
+'' 2. task
+'' Create a function which has one parameter: a text file path.
+'' This function counts the words and sentences in the text file
+'' and returns these values.
+'''
 def countWordsAndSenteces(filePath):
 	if(os.path.isfile(filePath) is False):
 		raise Exception("The input path does not denote a directory: " + filePath)
@@ -64,17 +68,21 @@ def countWordsAndSenteces(filePath):
 			sentences += 1
 	return words,sentences
 
-# 3. task
-# Create a function which has parameters: 2D vector coordinates.
-# This function calculates and returns the magnitude (length) of the vector.
+'''
+'' 3. task
+'' Create a function which has parameters: 2D vector coordinates.
+'' This function calculates and returns the magnitude (length) of the vector.
+'''
 def vectorMagnitude(coordinateX, coordinateY):
 	return math.sqrt(math.pow(coordinateX,2) + math.pow(coordinateY,2))
 
-# 4. task
-# Create a function which has two parameters: two Python list with numbers.
-# The function join together the lists, the first list element next to the second list element etc...
-# After that returns the result list.
-# listA(a,b,c), listB(1,2,3,4) -> resultList(a,1,b,2,c,3,4)
+'''
+'' 4. task
+'' Create a function which has two parameters: two Python list with numbers.
+'' The function join together the lists, the first list element next to the second list element etc...
+'' After that returns the result list.
+'' listA(a,b,c), listB(1,2,3,4) -> resultList(a,1,b,2,c,3,4)
+'''
 def mergingLists(listA, listB):
 	if(len(listA) == 0):
 		return listB
@@ -96,10 +104,12 @@ def mergingLists(listA, listB):
 		resultList.extend(listB)
 	return resultList
 
-# 0. task
-# After this comment write the tests of the defined functions.
-# Call the function with correct and wrong parameters also.
-# Handle the possible errors.
+'''
+'' 0. task
+'' After this comment write the tests of the defined functions.
+'' Call the function with correct and wrong parameters also.
+'' Handle the possible errors.
+'''
 textFilePath = "/home/janohhank/GitWorking/ProgrammingExercisesPython/resources/010-Functions-Text-File.txt"
 
 print("[" + __file__ + "]" + "[INFO]" + " Task 1, the file text:")
