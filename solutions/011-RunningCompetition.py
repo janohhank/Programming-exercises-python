@@ -147,7 +147,8 @@ print("[" + __file__ + "]" + "[INFO]" + " List of best 10 players: ")
 counter = int(0)
 index = int(0)
 previousRaceTime = int(-1)
-while(counter < 10):
+cycleThreshold = min(10,len(sortedRaceTimes))
+while(counter < cycleThreshold):
 	playerID = sortedRaceTimes[index][0]
 	playerRaceTime = sortedRaceTimes[index][1]
 
