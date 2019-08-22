@@ -33,10 +33,18 @@
 ## Extra task: Write a bold, and blinking "Welcome!" message into the monitor.
 ##
 ## @task-author Kishazi "janohhank" Janos
-## @implementation-author
+## @implementation-author Kishazi "janohhank" Janos
 
 # The curses library supplies a terminal-independent screen-painting and keyboard-handling facility for text-based terminals.
 import curses
+# This module provides various time-related functions.
+import time
+
+# Global variables
+wKeyNumber = 119
+sKeyNumber = 115
+aKeyNumber = 97
+dKeyNumber = 100
 
 # Initialize curses for the whole screen.
 window = curses.initscr()
@@ -49,33 +57,47 @@ window.keypad(True)
 # Get current window dimension.
 windowDimensions = window.getmaxyx()
 
-window.addstr("Welcome!")
+window.addstr(
+	int(windowDimensions[0] / 2),
+	int(windowDimensions[1] / 2),
+	"Welcome!",
+	curses.COLOR_BLUE | curses.A_BLINK | curses.A_BOLD
+)
 
-requiredKeyboardCount = 10
+requiredKeyboardCount = 15
 
 step = 0
-movements = []
+firstKeyPress = True
+ellapsedTimes = []
 while(step < requiredKeyboardCount):
 	key = window.getch()
-	if(key == curses.KEY_DOWN):
+
+	if(firstKeyPress):
+		start = time.time()
+		firstKeyPress = False
+		ellapedTime = 0
+	else:
+		end = time.time()
+		ellapedTime = end - start
+		ellapsedTimes.append(ellapedTime)
+
+		start = end
+
+	if(key == sKeyNumber):
 		window.clear()
-		window.addstr(int(windowDimensions[0] / 2), int(windowDimensions[1] / 2), "KEY_DOWN")
-		movements.append("DOWN")
-	elif(key == curses.KEY_UP):
+		window.addstr(int(windowDimensions[0] / 2), int(windowDimensions[1] / 2), "KEY_S, ellapsed time " + str(ellapedTime) + " sec.")
+	elif(key == wKeyNumber):
 		window.clear()
-		window.addstr(int(windowDimensions[0] / 2), int(windowDimensions[1] / 2), "KEY_UP")
-		movements.append("UP")
-	elif(key == curses.KEY_LEFT):
+		window.addstr(int(windowDimensions[0] / 2), int(windowDimensions[1] / 2), "KEY_W, ellapsed time " + str(ellapedTime) + " sec.")
+	elif(key == aKeyNumber):
 		window.clear()
-		window.addstr(int(windowDimensions[0] / 2), int(windowDimensions[1] / 2), "KEY_LEFT")
-		movements.append("LEFT")
-	elif(key == curses.KEY_RIGHT):
+		window.addstr(int(windowDimensions[0] / 2), int(windowDimensions[1] / 2), "KEY_A, ellapsed time " + str(ellapedTime) + " sec.")
+	elif(key == dKeyNumber):
 		window.clear()
-		window.addstr(int(windowDimensions[0] / 2), int(windowDimensions[1] / 2), "KEY_RIGHT")
-		movements.append("RIGHT")
+		window.addstr(int(windowDimensions[0] / 2), int(windowDimensions[1] / 2), "KEY_D, ellapsed time " + str(ellapedTime) + " sec.")
 	else:
 		window.clear()
-		window.addstr(int(windowDimensions[0] / 2), int(windowDimensions[1] / 2), "Invalid key, you should use arrows.")
+		window.addstr(int(windowDimensions[0] / 2), int(windowDimensions[1] / 2), "Invalid key, you should use w-a-s-d keys, ellapsed time " + str(ellapedTime) + " sec.")
 		continue
 	step += 1
 
@@ -87,3 +109,5 @@ curses.nocbreak()
 window.keypad(False)
 # Restore terminal to original operating mode.
 curses.endwin()
+
+print("[" + __file__ + "]" + "[INFO]" + " Ellaped times [sec] between button presses: " + str(ellapsedTimes))
