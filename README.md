@@ -1,4 +1,4 @@
-# ProgrammingExercises
+# Programming Exercises in Python
 
 For a short time I taught programming basics for beginners, and the selected script language was the Python. I was upload the tasks and resources into this repository.
 
